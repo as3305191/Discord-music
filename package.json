@@ -14,15 +14,14 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
+    "worker": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/as3305191/Discord-music.git"
   },
   "keywords": [
-    "example",
-    "heroku"
+ 
   ],
   "author": "",
   "license": "ISC",
