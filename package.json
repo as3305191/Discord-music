@@ -1,0 +1,28 @@
+{
+  "name": "Discord-music",
+  "version": "1.0.0",
+  "description": "discord自寫音樂機器人(測試中)",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.2.5",
+    "fluent-ffmpeg": "^2.1.2",
+    "ytdl-core": "^2.1.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/as3305191/Discord-music.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/as3305191/Discord-music/issues"
+  },
+  "homepage": "https://github.com/as3305191/Discord-music#readme"
+}
