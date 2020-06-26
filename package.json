@@ -20,7 +20,10 @@
     "type": "git",
     "url": "git+https://github.com/as3305191/Discord-music.git"
   },
-  "keywords": [],
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
