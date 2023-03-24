@@ -60,103 +60,103 @@ client.on('message', async message => {
 });
 
 
-client.on('message', async message => {
-  if (message.content.startsWith(`${prefix}add_song`)) {
-    const args = message.content.split(" ");
-    const now_message = message.content.split("v=");
-    const songInfo = await ytdl.getInfo(args[1]);
-    const song = {
-      title: songInfo.title,
-      url: songInfo.video_url
-    };
+// client.on('message', async message => {
+//   if (message.content.startsWith(`${prefix}add_song`)) {
+//     const args = message.content.split(" ");
+//     const now_message = message.content.split("v=");
+//     const songInfo = await ytdl.getInfo(args[1]);
+//     const song = {
+//       title: songInfo.title,
+//       url: songInfo.video_url
+//     };
   
-          //`${message.author}`  帳號
-          //song.url  歌曲網址
+//           //`${message.author}`  帳號
+//           //song.url  歌曲網址
          
       
-          var data = {
-            account: `${message.author}`,
-            song_title: `${song.title}`,
-            song_id: `${now_message[1]}`
-          };
-          var user = `${message.author}`;
-          var song_id = `${now_message[1]}`;
-          // var sql = 'SELECT * FROM member WHERE account= ? AND song_id= ?';
-          // db.query(sql, [user, song_id], function(err, result){
-          //   if(result.length>0){
-          //     // console.log(result.length);
-          //     message.channel.send('你有此歌單 不存取');
+//           var data = {
+//             account: `${message.author}`,
+//             song_title: `${song.title}`,
+//             song_id: `${now_message[1]}`
+//           };
+//           var user = `${message.author}`;
+//           var song_id = `${now_message[1]}`;
+//           // var sql = 'SELECT * FROM member WHERE account= ? AND song_id= ?';
+//           // db.query(sql, [user, song_id], function(err, result){
+//           //   if(result.length>0){
+//           //     // console.log(result.length);
+//           //     message.channel.send('你有此歌單 不存取');
 
-          //   } else{
-          //     // console.log(result.length);
-          //     db.query('INSERT INTO `member` SET ?', data, function(err){
-          //       if(err){
-          //         // console.log('寫入資料失敗！');
-          //         message.channel.send('寫入資料失敗！');
+//           //   } else{
+//           //     // console.log(result.length);
+//           //     db.query('INSERT INTO `member` SET ?', data, function(err){
+//           //       if(err){
+//           //         // console.log('寫入資料失敗！');
+//           //         message.channel.send('寫入資料失敗！');
 
-          //         throw err;
-          //       } else{
-          //         message.channel.send(`${message.author}:${song.title}`);
-          //         // console.log('成功');
-          //       }
-          //     });
-          //   }
-          // });
+//           //         throw err;
+//           //       } else{
+//           //         message.channel.send(`${message.author}:${song.title}`);
+//           //         // console.log('成功');
+//           //       }
+//           //     });
+//           //   }
+//           // });
       
-  }
-});
+//   }
+// });
 
-client.on('message', async message => {
-  if (message.content.startsWith(`${prefix}use_my_song_list`)) {
+// client.on('message', async message => {
+//   if (message.content.startsWith(`${prefix}use_my_song_list`)) {
     
-    if (message.member.voiceChannel) {
-      const connection = await message.member.voiceChannel.join();
-      const serverQueue = queue.get(message.guild.id);
-      const voiceChannel = message.member.voiceChannel;
+//     if (message.member.voiceChannel) {
+//       const connection = await message.member.voiceChannel.join();
+//       const serverQueue = queue.get(message.guild.id);
+//       const voiceChannel = message.member.voiceChannel;
 
-      var num = 0;
-      var user = `${message.author}`;
-      var sql = 'SELECT * FROM member WHERE account= ?';
-      const msgchannel = message.channel;
+//       var num = 0;
+//       var user = `${message.author}`;
+//       var sql = 'SELECT * FROM member WHERE account= ?';
+//       const msgchannel = message.channel;
 
-      // db.query(sql, [user], function(err, result){
-      //   for ( i=0 ; i < result.length ; i++ ){
-      //     if(result.length>0){
+//       // db.query(sql, [user], function(err, result){
+//       //   for ( i=0 ; i < result.length ; i++ ){
+//       //     if(result.length>0){
             
-      //       const song = {
-      //         title: result[i].song_title,
-      //         url: 'https://www.youtube.com/watch?v='+result[i].song_id
-      //       };
-      //       play(message, serverQueue, song,msgchannel );
+//       //       const song = {
+//       //         title: result[i].song_title,
+//       //         url: 'https://www.youtube.com/watch?v='+result[i].song_id
+//       //       };
+//       //       play(message, serverQueue, song,msgchannel );
        
 
-      //       // if (!serverQueue) {
-      //       //   const queueContruct = {
-      //       //     textChannel: message.channel,
-      //       //     voiceChannel: voiceChannel,
-      //       //     connection: null,
-      //       //     songs: [],
-      //       //     volume: 5,
-      //       //     playing: true
-      //       //   };
-      //       //   console.log(message.guild.id);
-      //       //   queue.set(message.guild.id, queueContruct);
+//       //       // if (!serverQueue) {
+//       //       //   const queueContruct = {
+//       //       //     textChannel: message.channel,
+//       //       //     voiceChannel: voiceChannel,
+//       //       //     connection: null,
+//       //       //     songs: [],
+//       //       //     volume: 5,
+//       //       //     playing: true
+//       //       //   };
+//       //       //   console.log(message.guild.id);
+//       //       //   queue.set(message.guild.id, queueContruct);
 
-      //       //   queueContruct.songs.push(song);
+//       //       //   queueContruct.songs.push(song);
 
-      //       //   try {
-      //       //     queueContruct.connection = connection;
-      //       //     playStream(message.guild, queueContruct.songs[0]);
-      //       //   } catch (err) {
-      //       //     console.log(err);
-      //       //     queue.delete(message.guild.id);
-      //       //     return message.channel.send(err);
-      //       //   }
-      //       //   console.log(serverQueue);
+//       //       //   try {
+//       //       //     queueContruct.connection = connection;
+//       //       //     playStream(message.guild, queueContruct.songs[0]);
+//       //       //   } catch (err) {
+//       //       //     console.log(err);
+//       //       //     queue.delete(message.guild.id);
+//       //       //     return message.channel.send(err);
+//       //       //   }
+//       //       //   console.log(serverQueue);
 
            
-      //       //   // queueContruct_map.push(queueContruct);
-      //       //   // console.log(queueContruct_map);
+//       //       //   // queueContruct_map.push(queueContruct);
+//       //       //   // console.log(queueContruct_map);
            
               
 
@@ -164,22 +164,22 @@ client.on('message', async message => {
             
 
               
-      //       // } else {
-      //       //   serverQueue.songs.push(song);
-      //       //   return message.channel.send(`${song.title} 正在排隊喔請稍等上一個首歌曲結束`);
-      //       // } 
-      //     }  else{
-      //       msgchannel.send('你還未有歌單 請先看指令 並新增你的歌單');
-      //     }
-      //   }
+//       //       // } else {
+//       //       //   serverQueue.songs.push(song);
+//       //       //   return message.channel.send(`${song.title} 正在排隊喔請稍等上一個首歌曲結束`);
+//       //       // } 
+//       //     }  else{
+//       //       msgchannel.send('你還未有歌單 請先看指令 並新增你的歌單');
+//       //     }
+//       //   }
   
-      // });
-    } else {
-      message.reply('我必須先加入一個頻道才能斷線');
-    }
+//       // });
+//     } else {
+//       message.reply('我必須先加入一個頻道才能斷線');
+//     }
    
-  }
-});
+//   }
+// });
 
 async function play(message, serverQueue, song,msgchannel) {
   const args = message.content.split(" ");
