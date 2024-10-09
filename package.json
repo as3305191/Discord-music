@@ -1,22 +1,25 @@
 {
   "name": "discord-music",
   "version": "1.0.0",
-  "description": "discord自寫音樂機器人(測試中)",
+  "description": "discord自寫音樂機器人",
   "main": "index.js",
   "dependencies": {
     "-": "0.0.1",
-    "@discordjs/opus": "^0.3.2",
-    "axios": "^0.19.2",
-    "discord.js": "^11.6.4",
-    "express": "^4.17.1",
+    "@discordjs/opus": "^0.9.0",
+    "@discordjs/voice": "^0.16.0",
+    "axios": "^1.7.7",
+    "discord.js": "^14.9.0",
+    "express": "^4.21.1",
     "ffmpeg": "0.0.4",
     "ffmpeg-static": "^4.2.5",
     "fluent-ffmpeg": "^2.1.2",
+    "libsodium-wrappers": "^0.7.11",
     "mysql": "^2.18.1",
+    "play-dl": "^1.9.6",
     "ytdl-core": "^2.1.7"
   },
   "devDependencies": {},
-  "scripts": { 
+  "scripts": {
     "start": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
